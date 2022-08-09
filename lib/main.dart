@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg';
   String userName = 'こんぶ @ Flutter大学';
   String date = '2022/05/05';
+  String comment = '最高でした。';
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +31,16 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
-              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
+              TweetTile(imageURL, userName, date, comment),
             ],
           ),
         ),
@@ -52,8 +53,9 @@ class TweetTile extends StatelessWidget {
   String imageURL;
   String userName;
   String date;
+  String comment;
 
-  TweetTile(this.imageURL, this.userName, this.date, {Key? key})
+  TweetTile(this.imageURL, this.userName, this.date, this.comment, {Key? key})
       : super(key: key);
 
   @override
@@ -78,7 +80,7 @@ class TweetTile extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 4),
-              const Text('最高でした。'),
+              Text('${comment}'),
               const SizedBox(height: 4),
               Row(
                 children: [
