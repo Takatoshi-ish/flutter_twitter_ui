@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   String imageURL =
       'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg';
   String userName = 'こんぶ @ Flutter大学';
+  String date = '2022/05/05';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,16 +30,16 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
-              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
+              TweetTile(imageURL, userName, date),
             ],
           ),
         ),
@@ -49,8 +51,10 @@ class MyApp extends StatelessWidget {
 class TweetTile extends StatelessWidget {
   String imageURL;
   String userName;
+  String date;
 
-  TweetTile(this.imageURL, this.userName, {Key? key}) : super(key: key);
+  TweetTile(this.imageURL, this.userName, this.date, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +74,7 @@ class TweetTile extends StatelessWidget {
                 children: [
                   Text('${userName}'),
                   const SizedBox(width: 8),
-                  Text('2022/05/05'),
+                  Text('${date}'),
                 ],
               ),
               const SizedBox(height: 4),
