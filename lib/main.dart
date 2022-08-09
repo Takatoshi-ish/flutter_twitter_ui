@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           actions: <Widget>[
             Transform.rotate(
               angle: 180 * pi / 180,
-              child: Icon(Icons.auto_awesome),
+              child: const Icon(Icons.auto_awesome),
             ),
             const SizedBox(
               width: 20,
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
           fixedColor: Colors.blue,
           currentIndex: 0,
           type: BottomNavigationBarType.fixed,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "",
