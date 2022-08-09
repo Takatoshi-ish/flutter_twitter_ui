@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   String imageURL = 'assets/profile.png';
   String userName = 'Taka @ Flutter大学';
   String date = '2022/05/05';
-  String comment = '最高でした。';
+  String comment = '昨日のイベント最高でした！';
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +50,12 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              for (int i = 0; i < 20; i++) ...{
-                TweetTile(imageURL, userName, date, comment),
-              },
-            ],
+        body: ListView(
+          children: List.generate(
+            100,
+            (int index) {
+              return TweetTile(imageURL, userName, date, comment);
+            },
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -105,82 +104,123 @@ class TweetTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            backgroundImage: AssetImage(
-              imageURL,
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(imageURL),
+      ),
+      title: Text(
+        userName,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: Column(
+        children: <Widget>[
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              comment,
+              overflow: TextOverflow.clip,
+              maxLines: 3,
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
-          const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text(userName),
-                  const SizedBox(width: 8),
-                  Text(date),
-                ],
-              ),
-              const SizedBox(height: 4),
-              Text(comment),
-              const SizedBox(height: 4),
-              Row(
-                children: const [
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(Icons.comment),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Icon(Icons.repeat),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Icon(Icons.favorite_border),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Icon(Icons.share),
-                ],
-              ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Icon(Icons.comment),
+              Icon(Icons.repeat),
+              Icon(Icons.favorite_border),
+              Icon(Icons.share),
             ],
           ),
         ],
       ),
     );
+
+    //   Padding(
+    //     padding: const EdgeInsets.all(8.0),
+    //     child: Row(
+    //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       children: [
+    //         CircleAvatar(
+    //           backgroundImage: AssetImage(
+    //             imageURL,
+    //           ),
+    //         ),
+    //         const SizedBox(width: 8),
+    //         Column(
+    //           crossAxisAlignment: CrossAxisAlignment.start,
+    //           children: [
+    //             Row(
+    //               children: [
+    //                 Text(userName),
+    //                 const SizedBox(width: 8),
+    //                 Text(date),
+    //               ],
+    //             ),
+    //             const SizedBox(height: 4),
+    //             Text(comment),
+    //             const SizedBox(height: 4),
+    //             Row(
+    //               children: const [
+    //                 SizedBox(
+    //                   width: 15,
+    //                 ),
+    //                 Icon(Icons.comment),
+    //                 SizedBox(
+    //                   width: 30,
+    //                 ),
+    //                 Icon(Icons.repeat),
+    //                 SizedBox(
+    //                   width: 30,
+    //                 ),
+    //                 Icon(Icons.favorite_border),
+    //                 SizedBox(
+    //                   width: 30,
+    //                 ),
+    //                 Icon(Icons.share),
+    //               ],
+    //             ),
+    //           ],
+    //         ),
+    //       ],
+    //     ),
+    //   );
+    // }
   }
 }
 
-//今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
-class IconContainer extends StatelessWidget {
-  String iconPath;
-  double width;
-  double height;
-  IconContainer(this.iconPath, this.width, this.height, {Key? key})
-      : super(key: key);
+// //今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
+// class IconContainer extends StatelessWidget {
+//   String iconPath;
+//   double width;
+//   double height;
+//   IconContainer(this.iconPath, this.width, this.height, {Key? key})
+//       : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              iconPath,
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: () {},
+//       child: Container(
+//         width: width,
+//         height: height,
+//         decoration: BoxDecoration(
+//           image: DecorationImage(
+//             image: AssetImage(
+//               iconPath,
+//             ),
+//             fit: BoxFit.cover,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
