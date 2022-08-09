@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               angle: 180 * pi / 180,
               child: Icon(Icons.auto_awesome),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
           ],
