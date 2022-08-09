@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: const Text(
             'こんぶ @ Flutter大学',
             style: TextStyle(
