@@ -31,16 +31,9 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
-              TweetTile(imageURL, userName, date, comment),
+              for (int i = 0; i < 20; i++) ...{
+                TweetTile(imageURL, userName, date, comment),
+              },
             ],
           ),
         ),
