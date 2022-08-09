@@ -22,6 +22,17 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
+          leading: Container(
+            alignment: FractionalOffset.centerLeft,
+            child: OverflowBox(
+              maxWidth: 110,
+              child: CircleAvatar(
+                backgroundImage: AssetImage(
+                  imageURL,
+                ),
+              ),
+            ),
+          ),
           title: const Text(
             'ホーム',
             style: TextStyle(
