@@ -63,12 +63,12 @@ class TweetTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start, // 上揃えにする
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
             backgroundImage: NetworkImage(imageURL),
           ),
-          const SizedBox(width: 8), // 少し隙間を開ける
+          const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -115,7 +115,6 @@ class TweetTile extends StatelessWidget {
                           image: AssetImage(
                             'assets/repeat.png',
                           ),
-                          // fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -133,7 +132,6 @@ class TweetTile extends StatelessWidget {
                           image: AssetImage(
                             'assets/heart.png',
                           ),
-                          // fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -151,7 +149,6 @@ class TweetTile extends StatelessWidget {
                           image: AssetImage(
                             'assets/share.png',
                           ),
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
