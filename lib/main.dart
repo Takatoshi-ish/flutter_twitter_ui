@@ -41,6 +41,29 @@ class MyApp extends StatelessWidget {
           tooltip: 'Increment',
           child: Icon(Icons.add),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          fixedColor: Colors.blue,
+          currentIndex: 0,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.email),
+              label: "",
+            ),
+          ],
+        ),
       ),
     );
   }
