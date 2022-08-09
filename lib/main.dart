@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    // const Center(
-    //   child: Text(
-    //     'Hello, world!',
-    //     textDirection: TextDirection.ltr,
-    //   ),
-    // ),
-    MyApp(), // 先ほど作った MyApp() を表示したいので runApp() の中に書きます。
+    const MyApp(),
   );
 }
 
@@ -30,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: [
+            children: const [
               TweetTile(),
               TweetTile(),
               TweetTile(),
@@ -61,24 +55,24 @@ class TweetTile extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start, // 上揃えにする
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             backgroundImage: NetworkImage(
                 'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg'),
           ),
-          SizedBox(width: 8), // 少し隙間を開ける
+          const SizedBox(width: 8), // 少し隙間を開ける
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                children: [
+                children: const [
                   Text('こんぶ @ Flutter大学'),
                   SizedBox(width: 8),
                   Text('2022/05/05'),
                 ],
               ),
-              SizedBox(height: 4),
-              Text('最高でした。'),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
+              const Text('最高でした。'),
+              const SizedBox(height: 4),
               Row(
                 children: [
                   const SizedBox(
