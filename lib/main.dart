@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -26,6 +30,12 @@ class MyApp extends StatelessWidget {
               fontSize: 16,
             ),
           ),
+          actions: <Widget>[
+            Transform.rotate(
+              angle: 180 * pi / 180,
+              child: Icon(Icons.auto_awesome),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
