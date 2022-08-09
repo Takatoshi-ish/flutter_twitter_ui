@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
   String imageURL =
       'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg';
-
+  String userName = 'こんぶ @ Flutter大学';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,16 +28,16 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
-              TweetTile(imageURL),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
+              TweetTile(imageURL, userName),
             ],
           ),
         ),
@@ -48,8 +48,9 @@ class MyApp extends StatelessWidget {
 
 class TweetTile extends StatelessWidget {
   String imageURL;
+  String userName;
 
-  TweetTile(this.imageURL, {Key? key}) : super(key: key);
+  TweetTile(this.imageURL, this.userName, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +67,9 @@ class TweetTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                children: const [
-                  Text('こんぶ @ Flutter大学'),
-                  SizedBox(width: 8),
+                children: [
+                  Text('${userName}'),
+                  const SizedBox(width: 8),
                   Text('2022/05/05'),
                 ],
               ),
