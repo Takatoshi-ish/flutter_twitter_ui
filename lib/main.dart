@@ -128,20 +128,20 @@ class TweetTile extends StatelessWidget {
               Text(comment),
               const SizedBox(height: 4),
               Row(
-                children: [
-                  const SizedBox(
+                children: const [
+                  SizedBox(
                     width: 15,
                   ),
                   Icon(Icons.comment),
-                  const SizedBox(
+                  SizedBox(
                     width: 30,
                   ),
                   Icon(Icons.repeat),
-                  const SizedBox(
+                  SizedBox(
                     width: 30,
                   ),
                   Icon(Icons.favorite_border),
-                  const SizedBox(
+                  SizedBox(
                     width: 30,
                   ),
                   Icon(Icons.share),
