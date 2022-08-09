@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MyApp(),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  String imageURL =
+      'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +27,17 @@ class MyApp extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: const [
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
-              TweetTile(),
+            children: [
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
+              TweetTile(imageURL),
             ],
           ),
         ),
@@ -45,9 +47,9 @@ class MyApp extends StatelessWidget {
 }
 
 class TweetTile extends StatelessWidget {
-  const TweetTile({
-    Key? key,
-  }) : super(key: key);
+  String imageURL;
+
+  TweetTile(this.imageURL, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +58,8 @@ class TweetTile extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start, // 上揃えにする
         children: [
-          const CircleAvatar(
-            backgroundImage: NetworkImage(
-                'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg'),
+          CircleAvatar(
+            backgroundImage: NetworkImage(imageURL),
           ),
           const SizedBox(width: 8), // 少し隙間を開ける
           Column(
