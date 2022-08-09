@@ -35,6 +35,9 @@ class MyApp extends StatelessWidget {
               angle: 180 * pi / 180,
               child: Icon(Icons.auto_awesome),
             ),
+            SizedBox(
+              width: 20,
+            ),
           ],
         ),
         body: SingleChildScrollView(
