@@ -61,8 +61,10 @@ class MyApp extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.blue[400],
+          tooltip: 'New Comment',
+          child: const Icon(Icons.create),
         ),
         bottomNavigationBar: BottomNavigationBar(
           fixedColor: Colors.blue,
