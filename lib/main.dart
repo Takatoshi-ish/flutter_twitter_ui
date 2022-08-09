@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: const Text(
-            'こんぶ @ Flutter大学',
+            'Twitter UI',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
