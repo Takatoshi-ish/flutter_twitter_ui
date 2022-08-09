@@ -8,9 +8,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  String imageURL =
-      'https://pbs.twimg.com/profile_images/1510946043718160386/mPJ6v_Xf_400x400.jpg';
-  String userName = 'こんぶ @ Flutter大学';
+  String imageURL = 'assets/profile.png';
+  String userName = 'Taka @ Flutter大学';
   String date = '2022/05/05';
   String comment = '最高でした。';
 
@@ -59,7 +58,9 @@ class TweetTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
-            backgroundImage: NetworkImage(imageURL),
+            backgroundImage: AssetImage(
+              imageURL,
+            ),
           ),
           const SizedBox(width: 8),
           Column(
