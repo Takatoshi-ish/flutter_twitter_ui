@@ -133,94 +133,55 @@ class TweetTile extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Icon(Icons.comment),
-              Icon(Icons.repeat),
-              Icon(Icons.favorite_border),
-              Icon(Icons.share),
+            children: [
+              const SizedBox(
+                width: 15,
+              ),
+              IconContainer('assets/comment.png', 20, 20),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/repeat.png', 25, 20),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/heart.png', 25, 25),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/share.png', 20, 20),
             ],
           ),
         ],
       ),
     );
-
-    //   Padding(
-    //     padding: const EdgeInsets.all(8.0),
-    //     child: Row(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: [
-    //         CircleAvatar(
-    //           backgroundImage: AssetImage(
-    //             imageURL,
-    //           ),
-    //         ),
-    //         const SizedBox(width: 8),
-    //         Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             Row(
-    //               children: [
-    //                 Text(userName),
-    //                 const SizedBox(width: 8),
-    //                 Text(date),
-    //               ],
-    //             ),
-    //             const SizedBox(height: 4),
-    //             Text(comment),
-    //             const SizedBox(height: 4),
-    //             Row(
-    //               children: const [
-    //                 SizedBox(
-    //                   width: 15,
-    //                 ),
-    //                 Icon(Icons.comment),
-    //                 SizedBox(
-    //                   width: 30,
-    //                 ),
-    //                 Icon(Icons.repeat),
-    //                 SizedBox(
-    //                   width: 30,
-    //                 ),
-    //                 Icon(Icons.favorite_border),
-    //                 SizedBox(
-    //                   width: 30,
-    //                 ),
-    //                 Icon(Icons.share),
-    //               ],
-    //             ),
-    //           ],
-    //         ),
-    //       ],
-    //     ),
-    //   );
-    // }
   }
 }
 
-// //今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
-// class IconContainer extends StatelessWidget {
-//   String iconPath;
-//   double width;
-//   double height;
-//   IconContainer(this.iconPath, this.width, this.height, {Key? key})
-//       : super(key: key);
+//今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
+class IconContainer extends StatelessWidget {
+  String iconPath;
+  double width;
+  double height;
+  IconContainer(this.iconPath, this.width, this.height, {Key? key})
+      : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () {},
-//       child: Container(
-//         width: width,
-//         height: height,
-//         decoration: BoxDecoration(
-//           image: DecorationImage(
-//             image: AssetImage(
-//               iconPath,
-//             ),
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              iconPath,
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+}
