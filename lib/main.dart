@@ -67,90 +67,65 @@ class TweetTile extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text('${userName}'),
+                  Text(userName),
                   const SizedBox(width: 8),
-                  Text('${date}'),
+                  Text(date),
                 ],
               ),
               const SizedBox(height: 4),
-              Text('${comment}'),
+              Text(comment),
               const SizedBox(height: 4),
               Row(
                 children: [
                   const SizedBox(
                     width: 15,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 20,
-                      height: 20,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/comment.png',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
+                  IconContainer('assets/comment.png', 20, 20),
                   const SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 25,
-                      height: 20,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/repeat.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  IconContainer('assets/repeat.png', 25, 20),
                   const SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 25,
-                      height: 25,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/heart.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  IconContainer('assets/heart.png', 25, 25),
                   const SizedBox(
                     width: 30,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 20,
-                      height: 20,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/share.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  IconContainer('assets/share.png', 20, 20),
                 ],
               ),
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+//今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
+class IconContainer extends StatelessWidget {
+  String iconPath;
+  double width;
+  double height;
+  IconContainer(this.iconPath, this.width, this.height, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              iconPath,
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
