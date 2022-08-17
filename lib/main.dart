@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   String comment2 =
       'IT企業勤務2年目(東京) | アプリ開発の勉強中 まずはIT企業で経験を積んで、その後あらゆるところで活躍できるエンジニアになりたいと思ってます！！ITエンジニアの人と繋がりたいです！';
   String comment3 = 'note書きましたmm\nわかりにくい戦略・構想・企画の話｜森 健志郎（˶′◡‵˶）スクー社長';
+  String commentmini1 = 'わかりにくい戦略・構想・企画の話｜森 健志郎 スクー社長｜...';
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +61,8 @@ class MyApp extends StatelessWidget {
               if (index % 3 == 0) {
                 return TweetTile(imageURL, userName, date, comment2);
               } else if (index % 5 == 0) {
-                return TweetWithImageTile(imageURL, userName, date, comment3);
+                return TweetWithImageTile(
+                    imageURL, userName, date, comment3, commentmini1);
               } else {
                 return TweetTile(imageURL, userName, date, comment);
               }
@@ -184,8 +186,10 @@ class TweetWithImageTile extends StatelessWidget {
   String userName;
   String date;
   String comment;
+  String commentmini;
 
-  TweetWithImageTile(this.imageURL, this.userName, this.date, this.comment,
+  TweetWithImageTile(
+      this.imageURL, this.userName, this.date, this.comment, this.commentmini,
       {Key? key})
       : super(key: key);
 
@@ -218,7 +222,19 @@ class TweetWithImageTile extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Image.asset('assets/image1.png'),
+          Container(
+            child: Column(
+              children: [
+                Image.asset('assets/image1.png'),
+                SizedBox(
+                  child: Text(
+                    commentmini,
+                    style: TextStyle(fontSize: 12),
+                  ),
+                )
+              ],
+            ),
+          ),
           const SizedBox(
             height: 10,
           ),
