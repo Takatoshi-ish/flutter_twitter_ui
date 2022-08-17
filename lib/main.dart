@@ -138,17 +138,26 @@ class TweetTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer('assets/comment.png', 20, 20),
-              const Text('1'),
+              const Text(
+                '1',
+                style: TextStyle(fontSize: 12),
+              ),
               const SizedBox(
                 width: 30,
               ),
               IconContainer('assets/repeat.png', 25, 20),
-              const Text('5'),
+              const Text(
+                '5',
+                style: TextStyle(fontSize: 12),
+              ),
               const SizedBox(
                 width: 30,
               ),
               IconContainer('assets/heart.png', 25, 25),
-              const Text('100'),
+              const Text(
+                '100',
+                style: TextStyle(fontSize: 12),
+              ),
               const SizedBox(
                 width: 30,
               ),
