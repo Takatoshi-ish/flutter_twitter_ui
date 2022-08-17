@@ -229,12 +229,21 @@ class TweetWithImageTile extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Image.asset('assets/image1.png'),
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0),
+                  ),
+                  child: Image.asset(
+                    'assets/image1.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Container(
                   padding: const EdgeInsets.all(10.0),
                   child: Text(
                     commentmini,
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 12),
                   ),
                 )
               ],
