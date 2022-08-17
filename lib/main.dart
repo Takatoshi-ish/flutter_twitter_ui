@@ -223,10 +223,15 @@ class TweetWithImageTile extends StatelessWidget {
             height: 10,
           ),
           Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Color.fromARGB(255, 187, 187, 187)),
+              borderRadius: BorderRadius.circular(15),
+            ),
             child: Column(
               children: [
                 Image.asset('assets/image1.png'),
-                SizedBox(
+                Container(
+                  padding: const EdgeInsets.all(10.0),
                   child: Text(
                     commentmini,
                     style: TextStyle(fontSize: 12),
