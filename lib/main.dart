@@ -218,6 +218,10 @@ class TweetWithImageTile extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          Image.asset('assets/image1.png'),
+          const SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
