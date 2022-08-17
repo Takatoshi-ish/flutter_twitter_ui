@@ -231,9 +231,13 @@ class TweetWithImageTile extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    border:
-                        Border.all(color: Color.fromARGB(255, 187, 187, 187)),
-                    borderRadius: BorderRadius.circular(15),
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 1,
+                        color: Color.fromARGB(255, 187, 187, 187),
+                      ),
+                    ),
+                    // borderRadius: BorderRadius.circular(15),
                   ),
                   child: ClipRRect(
                     borderRadius: const BorderRadius.only(
