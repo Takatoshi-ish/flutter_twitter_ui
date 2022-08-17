@@ -58,6 +58,8 @@ class MyApp extends StatelessWidget {
             (int index) {
               if (index % 3 == 0) {
                 return TweetTile(imageURL, userName, date, comment2);
+              } else if (index % 5 == 0) {
+                return TweetWithImageTile(imageURL, userName, date, comment);
               } else {
                 return TweetTile(imageURL, userName, date, comment);
               }
@@ -106,6 +108,84 @@ class TweetTile extends StatelessWidget {
   String comment;
 
   TweetTile(this.imageURL, this.userName, this.date, this.comment, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(imageURL),
+      ),
+      title: Text(
+        userName,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: Column(
+        children: <Widget>[
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              comment,
+              overflow: TextOverflow.clip,
+              maxLines: 3,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(
+                width: 15,
+              ),
+              IconContainer('assets/comment.png', 20, 20),
+              const Text(
+                '1',
+                style: TextStyle(fontSize: 12),
+              ),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/repeat.png', 25, 20),
+              const Text(
+                '5',
+                style: TextStyle(fontSize: 12),
+              ),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/heart.png', 25, 25),
+              const Text(
+                '100',
+                style: TextStyle(fontSize: 12),
+              ),
+              const SizedBox(
+                width: 30,
+              ),
+              IconContainer('assets/share.png', 20, 20),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TweetWithImageTile extends StatelessWidget {
+  String imageURL;
+  String userName;
+  String date;
+  String comment;
+
+  TweetWithImageTile(this.imageURL, this.userName, this.date, this.comment,
+      {Key? key})
       : super(key: key);
 
   @override
