@@ -148,6 +148,7 @@ class TweetTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer('assets/heart.png', 25, 25),
+              const Text('100'),
               const SizedBox(
                 width: 30,
               ),
