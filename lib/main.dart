@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
   String userName = 'Taka @ Flutter大学';
   String date = '2022/05/05';
   String comment = '昨日のイベント最高でした！';
+  String comment2 =
+      'IT企業勤務2年目(東京) | アプリ開発の勉強中 まずはIT企業で経験を積んで、その後あらゆるところで活躍できるエンジニアになりたいと思ってます！！ITエンジニアの人と繋がりたいです！';
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,11 @@ class MyApp extends StatelessWidget {
           children: List.generate(
             100,
             (int index) {
-              return TweetTile(imageURL, userName, date, comment);
+              if (index % 3 == 0) {
+                return TweetTile(imageURL, userName, date, comment2);
+              } else {
+                return TweetTile(imageURL, userName, date, comment);
+              }
             },
           ),
         ),
