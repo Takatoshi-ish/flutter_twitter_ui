@@ -138,6 +138,7 @@ class TweetTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer('assets/comment.png', 20, 20),
+              const Text('1'),
               const SizedBox(
                 width: 30,
               ),
