@@ -158,7 +158,7 @@ class TweetTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/repeat.png', 'assets/share_darktheme.png', 25, 20),
+                  'assets/repeat.png', 'assets/repeat_darktheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
@@ -283,7 +283,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/repeat.png', 'assets/share_darktheme.png', 25, 20),
+                  'assets/repeat.png', 'assets/repeat_darktheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
