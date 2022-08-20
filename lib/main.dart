@@ -149,7 +149,7 @@ class TweetTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer(
-                  'assets/comment.png', 'assets/share_darktheme.png', 20, 20),
+                  'assets/comment.png', 'assets/comment_darktheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
@@ -274,7 +274,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer(
-                  'assets/comment.png', 'assets/share_darktheme.png', 20, 20),
+                  'assets/comment.png', 'assets/comment_darktheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
