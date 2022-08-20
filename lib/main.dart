@@ -149,7 +149,7 @@ class TweetTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer(
-                  'assets/comment.png', 'assets/share_darttheme.png', 20, 20),
+                  'assets/comment.png', 'assets/share_darktheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
@@ -158,7 +158,7 @@ class TweetTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/repeat.png', 'assets/share_darttheme.png', 25, 20),
+                  'assets/repeat.png', 'assets/share_darktheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
@@ -167,7 +167,7 @@ class TweetTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/heart.png', 'assets/share_darttheme.png', 25, 25),
+                  'assets/heart.png', 'assets/share_darktheme.png', 25, 25),
               const Text(
                 '100',
                 style: TextStyle(fontSize: 12),
@@ -176,7 +176,7 @@ class TweetTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/share.png', 'assets/share_darttheme.png', 20, 20),
+                  'assets/share.png', 'assets/share_darktheme.png', 20, 20),
             ],
           ),
         ],
@@ -274,7 +274,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 15,
               ),
               IconContainer(
-                  'assets/comment.png', 'assets/share_darttheme.png', 20, 20),
+                  'assets/comment.png', 'assets/share_darktheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
@@ -283,7 +283,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/repeat.png', 'assets/share_darttheme.png', 25, 20),
+                  'assets/repeat.png', 'assets/share_darktheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
@@ -292,7 +292,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/heart.png', 'assets/share_darttheme.png', 25, 25),
+                  'assets/heart.png', 'assets/share_darktheme.png', 25, 25),
               const Text(
                 '100',
                 style: TextStyle(fontSize: 12),
@@ -301,7 +301,7 @@ class TweetWithImageTile extends StatelessWidget {
                 width: 30,
               ),
               IconContainer(
-                  'assets/share.png', 'assets/share_darttheme.png', 20, 20),
+                  'assets/share.png', 'assets/share_darktheme.png', 20, 20),
             ],
           ),
         ],
