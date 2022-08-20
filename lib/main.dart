@@ -148,7 +148,8 @@ class TweetTile extends StatelessWidget {
               const SizedBox(
                 width: 15,
               ),
-              IconContainer('assets/comment.png', 20, 20),
+              IconContainer(
+                  'assets/comment.png', 'assets/share_darttheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
@@ -156,7 +157,8 @@ class TweetTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/repeat.png', 25, 20),
+              IconContainer(
+                  'assets/repeat.png', 'assets/share_darttheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
@@ -164,7 +166,8 @@ class TweetTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/heart.png', 25, 25),
+              IconContainer(
+                  'assets/heart.png', 'assets/share_darttheme.png', 25, 25),
               const Text(
                 '100',
                 style: TextStyle(fontSize: 12),
@@ -172,7 +175,8 @@ class TweetTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/share.png', 20, 20),
+              IconContainer(
+                  'assets/share.png', 'assets/share_darttheme.png', 20, 20),
             ],
           ),
         ],
@@ -269,7 +273,8 @@ class TweetWithImageTile extends StatelessWidget {
               const SizedBox(
                 width: 15,
               ),
-              IconContainer('assets/comment.png', 20, 20),
+              IconContainer(
+                  'assets/comment.png', 'assets/share_darttheme.png', 20, 20),
               const Text(
                 '1',
                 style: TextStyle(fontSize: 12),
@@ -277,7 +282,8 @@ class TweetWithImageTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/repeat.png', 25, 20),
+              IconContainer(
+                  'assets/repeat.png', 'assets/share_darttheme.png', 25, 20),
               const Text(
                 '5',
                 style: TextStyle(fontSize: 12),
@@ -285,7 +291,8 @@ class TweetWithImageTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/heart.png', 25, 25),
+              IconContainer(
+                  'assets/heart.png', 'assets/share_darttheme.png', 25, 25),
               const Text(
                 '100',
                 style: TextStyle(fontSize: 12),
@@ -293,7 +300,8 @@ class TweetWithImageTile extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              IconContainer('assets/share.png', 20, 20),
+              IconContainer(
+                  'assets/share.png', 'assets/share_darttheme.png', 20, 20),
             ],
           ),
         ],
@@ -305,9 +313,11 @@ class TweetWithImageTile extends StatelessWidget {
 //今回はUIだけなので良いが機能（アイコンタップ時の処理）も含めると分けるのが良いとは言い切れない
 class IconContainer extends StatelessWidget {
   String iconPath;
+  String iconPathDartMode;
   double width;
   double height;
-  IconContainer(this.iconPath, this.width, this.height, {Key? key})
+  IconContainer(this.iconPath, this.iconPathDartMode, this.width, this.height,
+      {Key? key})
       : super(key: key);
 
   @override
@@ -320,7 +330,9 @@ class IconContainer extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              iconPath,
+              Theme.of(context).brightness == Brightness.dark
+                  ? iconPathDartMode
+                  : iconPath,
             ),
             fit: BoxFit.cover,
           ),
